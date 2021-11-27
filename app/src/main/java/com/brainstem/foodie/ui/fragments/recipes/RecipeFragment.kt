@@ -1,4 +1,4 @@
-package com.brainstem.foodie
+package com.brainstem.foodie.ui.fragments.recipes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.brainstem.foodie.R
 import com.brainstem.foodie.databinding.FragmentRecipeBinding
-import kotlinx.android.synthetic.main.fragment_recipe.view.*
 
 class RecipeFragment : Fragment() {
 

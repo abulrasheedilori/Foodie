@@ -1,7 +1,6 @@
-package com.brainstem.foodie
+package com.brainstem.foodie.ui
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,6 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupWithNavController
+import com.brainstem.foodie.R
 import com.brainstem.foodie.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,9 +31,10 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host_fragment)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-            R.id.recipe_fragment,
-            R.id.favourite_fragment,
-            R.id.joke_fragment))
+                R.id.recipe_fragment,
+                R.id.favourite_fragment,
+                R.id.joke_fragment
+            ))
         bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
         

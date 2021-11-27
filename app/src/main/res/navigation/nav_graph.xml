@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/recipe_fragment"
-        android:name="com.brainstem.foodie.RecipeFragment"
+        android:name="com.brainstem.foodie.ui.fragments.recipes.RecipeFragment"
         android:label="@string/recipe_fragment_label"
         tools:layout="@layout/fragment_recipe">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/favourite_fragment"
-        android:name="com.brainstem.foodie.FavouriteFragment"
+        android:name="com.brainstem.foodie.ui.fragments.favourites.FavouriteFragment"
         android:label="@string/favourite_fragment_label"
         tools:layout="@layout/fragment_favourite">
 
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/joke_fragment"
-        android:name="com.brainstem.foodie.JokeFragment"
+        android:name="com.brainstem.foodie.ui.fragments.jokes.JokeFragment"
         android:label="@string/food_jokes"
         tools:layout="@layout/fragment_joke" />
 </navigation>

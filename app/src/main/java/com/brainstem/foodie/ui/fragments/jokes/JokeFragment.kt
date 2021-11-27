@@ -1,4 +1,4 @@
-package com.brainstem.foodie
+package com.brainstem.foodie.ui.fragments.jokes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.brainstem.foodie.databinding.FragmentJokeBinding
-import com.brainstem.foodie.databinding.FragmentRecipeBinding
 
 
 class JokeFragment : Fragment() {
