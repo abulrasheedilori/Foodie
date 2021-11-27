@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recipe_fragment">
+
+    <fragment
+        android:id="@+id/recipe_fragment"
+        android:name="com.brainstem.foodie.RecipeFragment"
+        android:label="@string/recipe_fragment_label"
+        tools:layout="@layout/fragment_recipe">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/favourite_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favourite_fragment"
+        android:name="com.brainstem.foodie.FavouriteFragment"
+        android:label="@string/favourite_fragment_label"
+        tools:layout="@layout/fragment_favourite">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/recipe_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/joke_fragment"
+        android:name="com.brainstem.foodie.JokeFragment"
+        android:label="@string/food_jokes"
+        tools:layout="@layout/fragment_joke" />
+</navigation>
