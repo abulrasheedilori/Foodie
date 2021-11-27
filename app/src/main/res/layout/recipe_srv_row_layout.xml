@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recite_row_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:layout_marginBottom="20dp">
+
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/lightMediumGray"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/recipe_iv"
+                android:layout_width="150dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:id="@+id/recipe_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/courgete"
+                android:maxLines="2"
+                android:text="@string/recipe_title"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.058"
+                app:layout_constraintStart_toEndOf="@+id/recipe_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/recipe_content_tv"
+                android:layout_width="220dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="6dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="@string/lorem"
+                android:textAlignment="viewStart"
+                android:textColor="@color/dark"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="@+id/recipe_title_tv"
+                app:layout_constraintStart_toStartOf="@+id/recipe_title_tv"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_title_tv" />
+
+            <ImageView
+                android:id="@+id/recipe_love_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:tint="@color/red"
+                app:layout_constraintStart_toStartOf="@+id/recipe_content_tv"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_content_tv"
+                app:srcCompat="@drawable/ic_favorite" />
+
+            <ImageView
+                android:id="@+id/recipe_time_iv"
+                android:layout_width="29dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="24dp"
+                app:tint="@color/yellow"
+                app:layout_constraintStart_toEndOf="@+id/recipe_love_iv"
+                app:layout_constraintTop_toTopOf="@+id/recipe_love_iv"
+                app:srcCompat="@drawable/ic_time_to_prepare" />
+
+            <ImageView
+                android:id="@+id/recipe_vegan_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:tint="@color/green"
+                app:layout_constraintStart_toEndOf="@+id/recipe_time_iv"
+                app:layout_constraintTop_toTopOf="@+id/recipe_time_iv"
+                app:srcCompat="@drawable/ic_vegan" />
+
+            <TextView
+                android:id="@+id/love_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/_100"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/recipe_love_iv"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_love_iv" />
+
+            <TextView
+                android:id="@+id/time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/_30"
+                android:textAlignment="center"
+                android:textColor="@color/darker"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/recipe_time_iv"
+                app:layout_constraintStart_toStartOf="@+id/recipe_time_iv"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_time_iv" />
+
+            <TextView
+                android:id="@+id/vegan_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/vegan"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/recipe_vegan_iv"
+                app:layout_constraintHorizontal_bias="0.437"
+                app:layout_constraintStart_toStartOf="@+id/recipe_vegan_iv"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_vegan_iv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
