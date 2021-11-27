@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
             R.id.recipe_fragment,
             R.id.favourite_fragment,
             R.id.joke_fragment
-        ))
         bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
         
