@@ -3,7 +3,7 @@ package com.brainstem.foodie.models
 
 import com.google.gson.annotations.SerializedName
 
-data class recipesModel(
+data class RecipesModel(
     @SerializedName("results")
     val results: List<Result>
 )

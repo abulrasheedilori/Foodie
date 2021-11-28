@@ -1,4 +1,4 @@
-package com.brainstem.foodie.constants
+package com.brainstem.foodie.utils
 
 class Constants {
     companion object {
