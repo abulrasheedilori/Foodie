@@ -44,8 +44,8 @@ object NetworkModule {
             .build()
     }
 
-        @Singleton
-        @Provides
+    @Singleton
+    @Provides
     fun providesApiService(retrofit: Retrofit): RecipesApiInterface {
         return retrofit.create(RecipesApiInterface::class.java)
     }

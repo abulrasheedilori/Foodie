@@ -8,8 +8,8 @@ import javax.inject.Inject
 
 @ActivityRetainedScoped
 class RemoteDataSource @Inject constructor(
-    private val recipesApiInterface: RecipesApiInterface ){
-
+    private val recipesApiInterface: RecipesApiInterface
+    ){
     suspend fun getRecipes(queries: Map<String, String>): Response<RecipesModel> {
         return recipesApiInterface.getRecipes(queries)
     }
