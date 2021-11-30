@@ -1,1 +1,1 @@
-# Foodie
+# Foodie is a food recipe android application with very attractive UI built solely with the best achitectural practices at heart using technologies such as dependency injection, seperation of concern, view-model, data binding, view binding, agile scrum managerial practices, git version control and to reduce the hassle of finding food recipes by 50%
