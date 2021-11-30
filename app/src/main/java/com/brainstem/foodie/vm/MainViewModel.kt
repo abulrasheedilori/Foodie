@@ -15,6 +15,7 @@ import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
+
 class MainViewModel @ViewModelScoped constructor(
     private val repository: Repository,
     application: Application
