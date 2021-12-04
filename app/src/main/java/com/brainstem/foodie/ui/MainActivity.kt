@@ -8,60 +8,55 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.AdapterView
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.brainstem.foodie.R
-import com.brainstem.foodie.databinding.ActivityMainBinding
+import com.brainstem.foodie.ui.fragments.recipes.RecipeFragment
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_recipe.*
 
-class MainActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity : AppCompatActivity(){
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    private var appBarConfiguration: AppBarConfiguration? = null
     private lateinit var navController: NavController
-    private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
+        //binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_main)
+        val toolBar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolBar)
 
         //connecting bottom nav view with the fragment select
-        navController = findNavController(R.id.nav_host_fragment)
+        //navController = findNavController(R.id.nav_host_fragment)
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.findNavController()
+        //bottomNavigationView.setupWithNavController(navController)
+
         appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.recipe_fragment,
-                R.id.favourite_fragment,
-                R.id.joke_fragment
-            ))
-        bottomNavigationView.setupWithNavController(navController)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        
-        //or you can target the navController.graph too
-        //appBarConfiguration = AppBarConfiguration(navController.graph)
-        //setupActionBarWithNavController(navController, appBarConfiguration)
+            setOf(R.id.recipe_fragment, R.id.favourite_fragment, R.id.joke_fragment))
 
-    }
+        navController.let { bottomNavigationView.setupWithNavController(it) }
+        setupActionBarWithNavController(navController, appBarConfiguration!!)
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration)|| super.onSupportNavigateUp()
+        return navController.navigateUp(appBarConfiguration!!)|| super.onSupportNavigateUp()
     }
-
 }

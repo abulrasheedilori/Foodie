@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.brainstem.foodie.databinding.RecipeShimmerRowLayoutBinding
 import com.brainstem.foodie.databinding.RecipeSrvRowLayoutBinding
 import com.brainstem.foodie.models.RecipesModel
 import com.brainstem.foodie.models.Result

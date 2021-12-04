@@ -5,20 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.brainstem.foodie.databinding.FragmentJokeBinding
+import com.brainstem.foodie.R
 
 
 class JokeFragment : Fragment() {
 
-    private var _binding: FragmentJokeBinding? = null
-    private val binding get() = _binding!!
+//    private var _binding: FragmentJokeBinding? = null
+//    private val binding get() = _binding!!
+    private lateinit var mView: View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentJokeBinding.inflate(inflater, container, false)
-        return binding.root
+        mView = inflater.inflate(R.layout.fragment_joke, container, false)
+        return mView
     }
 }

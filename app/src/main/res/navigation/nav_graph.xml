@@ -25,6 +25,7 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/recipe_fragment" />
     </fragment>
+
     <fragment
         android:id="@+id/joke_fragment"
         android:name="com.brainstem.foodie.ui.fragments.jokes.JokeFragment"

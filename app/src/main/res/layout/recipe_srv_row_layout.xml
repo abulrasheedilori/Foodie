@@ -14,8 +14,8 @@
         android:id="@+id/recite_row_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
 
         <com.google.android.material.circularreveal.cardview.CircularRevealCardView
             android:layout_width="0dp"
@@ -38,6 +38,7 @@
 
                 <ImageView
                     android:id="@+id/recipe_iv"
+                    loadRecipeImage="@{recipe.image}"
                     android:layout_width="150dp"
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
@@ -61,8 +62,9 @@
                     android:textColor="@color/green"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/recipe_content_tv"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.058"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/recipe_iv"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,37 +89,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    app:tint="@color/red"
                     app:layout_constraintStart_toStartOf="@+id/recipe_content_tv"
                     app:layout_constraintTop_toBottomOf="@+id/recipe_content_tv"
-                    app:srcCompat="@drawable/ic_favorite" />
+                    app:srcCompat="@drawable/ic_favorite"
+                    app:tint="@color/red" />
 
                 <ImageView
                     android:id="@+id/recipe_time_iv"
                     android:layout_width="29dp"
                     android:layout_height="25dp"
                     android:layout_marginStart="24dp"
-                    app:tint="@{recipe.aggregateLikes}"
                     app:layout_constraintStart_toEndOf="@+id/recipe_love_iv"
                     app:layout_constraintTop_toTopOf="@+id/recipe_love_iv"
-                    app:srcCompat="@drawable/ic_time_to_prepare" />
+                    app:srcCompat="@drawable/ic_time_to_prepare"
+                    app:tint="@color/yellow" />
 
                 <ImageView
                     android:id="@+id/recipe_vegan_iv"
+                    setVegan="@{recipe.vegan}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    app:tint="@color/black"
                     app:layout_constraintStart_toEndOf="@+id/recipe_time_iv"
                     app:layout_constraintTop_toTopOf="@+id/recipe_time_iv"
                     app:srcCompat="@drawable/ic_vegan" />
 
                 <TextView
                     android:id="@+id/love_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     setNumberOfLikes="@{recipe.aggregateLikes}"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="8dp"
                     android:textAlignment="center"
                     android:textColor="@color/red"
                     android:textStyle="bold"
@@ -127,11 +129,10 @@
 
                 <TextView
                     android:id="@+id/time_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="0"
                     setNumberOfMinutes="@{recipe.cookingMinutes}"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="8dp"
                     android:textAlignment="center"
                     android:textColor="@color/darker"
                     android:textStyle="bold"
@@ -142,10 +143,10 @@
 
                 <TextView
                     android:id="@+id/vegan_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     setVegan="@{recipe.vegan}"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="8dp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"

@@ -7,5 +7,4 @@
     android:background="@color/lightGray"
     tools:context=".ui.fragments.jokes.JokeFragment">
 
-
 </FrameLayout>

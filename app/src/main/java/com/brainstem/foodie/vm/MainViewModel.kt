@@ -11,12 +11,14 @@ import androidx.lifecycle.viewModelScope
 import com.brainstem.foodie.data.Repository
 import com.brainstem.foodie.models.RecipesModel
 import com.brainstem.foodie.utils.NetworkResult
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import javax.inject.Inject
 
-
-class MainViewModel @ViewModelScoped constructor(
+@HiltViewModel
+class MainViewModel @Inject constructor(
     private val repository: Repository,
     application: Application
 ): AndroidViewModel(application) {
